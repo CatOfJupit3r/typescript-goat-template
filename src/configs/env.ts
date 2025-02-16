@@ -14,8 +14,8 @@ switch (process.env.NODE_ENV) {
                 `File .${process.env.NODE_ENV}.env does not exist. Make sure you passed environment variables!`
             );
         }
-        // else, we assume they are passed to by container
-        // e.g. Heroku, Docker, etc.
+        // else, we assume they are passed on launch
+        // by the hosting provider (e.g. Heroku, Vercel, Coolify, etc.)
         break;
     }
     case 'development':
