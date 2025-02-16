@@ -70,6 +70,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
+          config-file: .github/configurations/codeql-config.yml
           languages: ${{ matrix.language }}
           # If you wish to specify custom queries, you can do so here or in a config file.
           # By default, queries listed here will override any specified in a config file.
@@ -94,7 +95,6 @@ jobs:
   
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
-        config-file: .github/configs/codeql-config.yml
         with:
           category: "/language:${{matrix.language}}"
       
